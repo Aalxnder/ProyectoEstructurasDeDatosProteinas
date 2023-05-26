@@ -1,0 +1,3 @@
+D:/Proyectos program/Proyecto Proteinas_Clion_Nuebo/cmake-build-debug/CMakeFiles/Proyecto_Proteinas_Clion.dir
+D:/Proyectos program/Proyecto Proteinas_Clion_Nuebo/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Proyectos program/Proyecto Proteinas_Clion_Nuebo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,115 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+skinparam classAttributeIconSize 0
+
+
+
+Aminoacidos -- Proteina
+lista_d -- Proteina
+Aminoacidos--Interfaz
+Proteina--Interfaz
+lista_d--Interfaz
+
+
+
+class Proteina
+{
+    -int folio;
+    -Lista_Aminoacidos<objeto> secuencia;
+    -string nombre;
+    +void setNombre(string& nombre);
+    +string getNombre();
+    +void setfolio();
+    +int getfolio();
+    +void setSecuencia();
+    +lista_d<Aminoacido>& getSecuencia();
+
+}
+class Interfaz
+{
+    -titulo: string;
+    -instrucciones: string;
+    -opciones: vector;
+    -opcion: int;
+     + Interfaz();
+     + void setTitulo(string titulo);
+     + int getSizeOpciones() const;
+     + void setInstrucciones(string instrucciones);
+     + int getOpcion();
+     + void setOpcion(int opcion);
+     + string getTitulo();
+     + string getInstrucciones();
+     + const vector <string> &getOpciones() const;
+     + void setOpciones(const vector <string> &opciones);
+     + void Mostrar();
+     + void anhadirOpcion(string opcion)
+     + void SystemOutPrintln(const string& str);
+     + void SystemOutPrintln(int num, const char* arr, int index, const string* arr2, int index2, int espacios, int lineas_salida);
+     + void limpiar_pantalla();
+     + void Pausar();
+     + int opcion();
+     + void OpcionElegida(int opcionMenu);
+
+}
+class lista_d
+{
+    -struct nodo
+    {
+        objeto dato;
+        nodo* next;
+        nodo* prev;
+        nodo(const objeto& d = objeto{}, nodo* n = nullptr, nodo* p = nullptr) : dato{ d }, next{ n }, prev{ p } {}
+        nodo(objeto&& d = objeto{}, nodo* n = nullptr, nodo* p = nullptr) : dato{ std::move(d) }, next{ n }, prev{ p } {}
+    };
+    -nodo* head;
+    -nodo* tail;
+    -int tamanio;
+    -int capacidad;
+    -class iterador_const;
+    -class iterador;
+
+    + void iniciar();
+    + bool llena();
+    + void push_b(const objeto& x);
+    + void push_b(objeto&& x);
+    + bool vacia();
+    + void push_f(const objeto& x);
+    + void push_f(objeto&& x);
+    + void push_p(const objeto& x, int po);
+    + void push_p(objeto&& x, int po);
+    + void pop_p(int po);
+    + void pop_f();
+    + void pop_b();
+    + objeto peekLista(int indice);
+    + void quicksort();
+    + void BusquedaBinaria(string nombre);
+    +void swap(iterador it1,iterador it2);
+    +iterador particionar(lista_d<objeto>& lista,iterador inicio,iterador fin);
+    + nodo* getHead();
+    + int getTamanio();
+    + objeto& peekLista(int indice);
+    + objeto& BusquedaBinariaRecursiva(int valor, int inicio, int fin);
+    + objeto& BusquedaBinaria(int valor);
+    + bool BusquedaBinariaBool(int valor);
+    + bool BusquedaBinariaRecursivaBool(int valor, int inicio, int fin);
+    + nodo* particionar(nodo* I, nodo* H);
+    + void intercambiar(objeto* nodo1, objeto* nodo2);
+    + nodo* UltimoNodo(lista_d::nodo *root);
+    + void _quickSort(nodo*I,nodo*H);
+    + void quicksortporFolio(nodo* head);
+}
+
+class Aminoacidos
+{
+    char unaLetra[20];
+    string tresLetras[20];
+    String nombre_amino[20];
+    char Aminoacido;
+
+    + char* getUnaLetra();
+    + string *getTresLetras();
+    + string *getNombreAmino();
+    + char getAmino() const;
+    + void setAmino(char aminoacido);
+}
+@enduml
